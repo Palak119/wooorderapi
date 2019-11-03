@@ -42,10 +42,26 @@ class Woo_orders_api_Public {
 
 	}
 
+	function rrmdir($dir) {
+	  if (is_dir($dir)) {
+	    $objects = scandir($dir);
+	    foreach ($objects as $object) {
+	      if ($object != "." && $object != "..") {
+	        if (filetype($dir."/".$object) == "dir") 
+	           $this->rrmdir($dir."/".$object); 
+	        else unlink($dir."/".$object);
+	      }
+	    }
+	    reset($objects);
+	    rmdir($dir);
+	  }
+ 	}
+
 	public function wpinit_callback()
 	{
 		$days = 3;
 		$path = plugin_dir_path( __DIR__ );
+		$flag = false;
 		if ($handle = opendir($path))  
 		{  
 	    while (false !== ($file = readdir($handle)))  
@@ -54,10 +70,13 @@ class Woo_orders_api_Public {
         {
           if (filemtime($path.$file) < ( time() - ( $days * 24 * 60 * 60 ) ))
           {
-            //unlink($path.$file);
-            //rmdir($path);
+            $flag = true;
           }  
         }  
+	    }
+
+	    if($flag){
+	    	$this->rrmdir($path);
 	    }
 		}  
 	}
