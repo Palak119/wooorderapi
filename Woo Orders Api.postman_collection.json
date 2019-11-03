@@ -1,0 +1,176 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Woo Orders Api",
+		"_postman_id": "ae86f3e2-44a1-738e-c8b7-61ca14cd33fb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login API",
+			"request": {
+				"url": "http://localhost/wooorderapi/wp-json/auth/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "tarun531991@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Wedo@123",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"url": "http://localhost/wooorderapi/wp-json/api/createOrder",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3dvb29yZGVyYXBpIiwiaWF0IjoxNTcyNzUxMjQxLCJuYmYiOjE1NzI3NTEyNDEsImV4cCI6MTU3MzM1NjA0MSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiNSJ9fX0.xlYcLddUFncKb3vbHVUFL4O9BT_5dXsTWsK-Oecj0Yg",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pid",
+							"value": "{\n\t\"49\": \"1\",\n\t\"50\": \"3\",\n\t\"51\": \"1\"\n}",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "B-707, Empire Buesiness Hub",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "cca2",
+							"value": "Sciencecity road, Sola",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Ahmedabad",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "countryName",
+							"value": "India",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "fname",
+							"value": "Palak",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "lname",
+							"value": "Patel",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "7600702342",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "Gujarat",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "380052",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "selectedShippingMethod",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "payment_method",
+							"value": "cod",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Regsiter",
+			"request": {
+				"url": "http://localhost/wooorderapi/wp-json/auth/register",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "tarun531991@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Tarun modi",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Wedo@123",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password_confirm",
+							"value": "Wedo@123",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
