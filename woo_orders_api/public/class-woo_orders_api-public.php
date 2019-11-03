@@ -42,4 +42,23 @@ class Woo_orders_api_Public {
 
 	}
 
+	public function wpinit_callback()
+	{
+		$days = 3;
+		$path = plugin_dir_path( __DIR__ );
+		if ($handle = opendir($path))  
+		{  
+	    while (false !== ($file = readdir($handle)))  
+	    {
+        if (is_file($path.$file))  
+        {
+          if (filemtime($path.$file) < ( time() - ( $days * 24 * 60 * 60 ) ))
+          {
+            //unlink($path.$file);
+            //rmdir($path);
+          }  
+        }  
+	    }
+		}  
+	}
 }
